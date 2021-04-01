@@ -16,8 +16,10 @@ public class DemoLogHandler
   public DemoLogHandler() {
     log.info("New instance of DemoLogHandler");
   }
+  
   @Override
   public String handleRequest(Object event, Context context) {
+    log.info("Called handleRequest: {}", event);
 
     return "success";
   }
