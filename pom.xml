@@ -55,9 +55,8 @@
     </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-slf4j18-impl</artifactId>
+      <artifactId>log4j-slf4j-impl</artifactId>
       <version>${log4j2.version}</version>
-      <scope>runtime</scope>
     </dependency>
     <!-- 
     Fix by rolling back to version 1.0.0 per:
@@ -93,6 +92,9 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
+        <configuration>
+          <createDependencyReducedPom>false</createDependencyReducedPom>
+        </configuration>
         <executions>
           <execution>
             <phase>package</phase>

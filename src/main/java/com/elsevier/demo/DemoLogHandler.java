@@ -20,8 +20,9 @@ public class DemoLogHandler
   @Override
   public String handleRequest(Object event, Context context) {
     log.info("Called handleRequest: {}", event);
+    out.println(String.format("Logger: %s", log.getClass().getName()));
 
-    return "success";
+    return String.format("success: log stream = %s", context.getLogStreamName());
   }
   
   public static void main(String[] args) {
